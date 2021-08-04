@@ -4,5 +4,8 @@
   },
   "devDependencies": {
     "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "start": "node out/src/index.js"
   }
 }
