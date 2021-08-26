@@ -34,7 +34,8 @@ client.on("messageReactionAdd", async (reaction) => {
     if(!reaction.message.author.bot && reaction.emoji.name == config.reaction && allowedChannels.includes(reaction.message.channel.id) && reaction.message.guild.me.permissionsIn(reaction.message.channel.id).has("MANAGE_MESSAGES")){
         if(reaction.count == config.requiredCount){
             let allowedPings = reaction.users.cache.map(u => u.id);
-            allowedPings.push(reaction.message.author.id)
+            if(!allowedPings.includes(reaction.message.author.id))
+                allowedPings.push(reaction.message.author.id);
             reaction.message.reply({
                 "content":`🗑 The following users have voted to delete this message:\n${reaction.users.cache.map(user => `<@${user.id}>`).join("\n")}`,
                 "allowedMentions":{
