@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:16
 COPY . /bot
 WORKDIR /bot
 RUN npm i
