@@ -45,7 +45,7 @@ client.on("messageReactionAdd", async (reaction) => {
                 setTimeout(() => {
                     reaction.message.delete();
                     botMsg.delete();
-                }, 1500);
+                }, 2500);
             });
         };
     };
