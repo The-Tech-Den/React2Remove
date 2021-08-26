@@ -31,7 +31,7 @@ client.on("messageCreate", message => {
 
 client.on("messageReactionAdd", async (reaction) => {
     let allowedChannels:string[] = JSON.parse(readFileSync("./allowedChannels.json").toString())
-    if(!reaction.message.author.bot && reaction.emoji.name == config.reaction && allowedChannels.includes(reaction.message.channel.id) && reaction.message.guild.me.permissionsIn(reaction.message.channel.id).has("MANAGE_MESSAGES")){
+    if(reaction.emoji.name == config.reaction && allowedChannels.includes(reaction.message.channel.id) && reaction.message.guild.me.permissionsIn(reaction.message.channel.id).has("MANAGE_MESSAGES")){
         if(reaction.count == config.requiredCount){
             let allowedPings = reaction.users.cache.map(u => u.id);
             if(!allowedPings.includes(reaction.message.author.id))
