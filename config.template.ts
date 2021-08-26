@@ -2,6 +2,7 @@ const config: Config  = {
     "reaction":"",
     "requiredCount":0,
     "channels":[],
-    "token":""
+    "token":"",
+    "whitelistedMembers":[]
 }
 export default config;
