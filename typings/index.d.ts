@@ -6,5 +6,7 @@ interface Config {
     /** Discord bot token */
     token:string,
     /** Discord ids of who are allowed to add to the allowed channels list */
-    whitelistedMembers:string[]
+    whitelistedMembers:string[],
+    /** (Optional) Which server to add slash commands to */
+    guild_id?:string
 }
